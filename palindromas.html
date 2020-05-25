@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilosClientes.css">
+</head>
+    
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="input-fiel col s12">
+                    <header > <h3 class="red">Testeo Palindromas</h3></header>
+                </div>
+                <div class="col s12 l12">
+
+                    <form class="contact-form" action="palindroma.php" id="palabraPalindroma" name="palabraPalindroma" method="POST">
+                    
+                    <div class="input-fiel col s12">
+                        <label for="nombre">Ingrese palabra a testear:</label>
+                        <input type="text" placeholder="Ingrese Palabra" id="palabra" name="palabra" title="Ingrese la palabra." class="">
+                        <span class="helper-text" data-error="wrong" data-success="right" id="valPalabra"></span>
+                    </div>
+                    
+                    <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                        <i class="material-icons right">send</i>
+                    </button>
+
+                    </form>
+
+                    <div class="col s12 l12">
+                        <h5 id=""></h5>
+                    </div>
+
+                    <div class="col s12 l12">
+                        <h5 id=""></h5>
+                    </div>
+
+                    <div class="input-fiel col s12">
+                    <footer class="footer">
+                        Presentado por: Olmeiro Orozco Ortiz &copy;
+                    </footer>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/funcionesCliente.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+</html>

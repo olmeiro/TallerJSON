@@ -4,11 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>formClientes</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.10.12/dist/sweetalert2.all.min.js"></script>
     <link rel="stylesheet" href="css/estilosClientes.css">
 
 </head>
@@ -17,7 +16,7 @@
 
         <nav>
             <div class="nav-wrapper">
-                <a href="#!" class="brand-logo">Kreemo</a>
+                <a href="#!" class="brand-logo">Kreemosos</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
                     <li> <a href="formUsuarios.html">Usuarios</a> </li>
@@ -41,85 +40,122 @@
                 <li><a href="formMaquinaria.html">Maquinaria</a> </li>
           </ul>
 
-            <main>
                 <div class="container">
                     <div class="row">
                         <div class="input-fiel col s12">
-                            <header > <h3>Registro Clientes</h3></header>
+                            <header > <h3 class="red">Registro Clientes</h3></header>
                         </div>
                         <div class="col s12 l12">
-                           <form action="registroCliente.php">
+                           <form class="contact-form" action="registroCliente.php" id="regCliente" name="regCliente" method="POST">
                            
                             <div class="input-fiel col s12">
                                 <label for="nombre">Nombre</label>
-                                <input type="text" placeholder="Nombre" id="nombre" title="Ingrese su nombre." class="solo_mayus_letras">
-                                <label for="" id="vNombre"></label>
+                                <input type="text" placeholder="Nombre" id="nombre" name="nombre" title="Ingrese su nombre." class="solo_mayus_letras">
+                                <span class="helper-text" data-error="wrong" data-success="right" id="valNombre"></span>
                             </div>
                             <div class="input-fiel col s12">
                                 <label for="apellido">Apellido</label>
-                                <input type="text" placeholder="Apellido" id="apellido" title="Ingrese su apellido." class="solo_mayus_letras">
-                                <label for="" id="vApellido"></label>
-
+                                <input type="text" placeholder="Apellido" id="apellido" name="apellido" title="Ingrese su apellido." class="solo_mayus_letras">
+                                <span class="helper-text" data-error="wrong" data-success="right" id="valApellido"></span>
                             </div>
 
-                            <div class="input-fiel col s12">
-                                <label for="documento">Tipo Documento</label>
-                                <input type="text" placeholder="Tipo De Documento" id="tipoDocumento"  class="">
-                                <label for="" id="vDocumento"></label>
-
-                            </div>
+                            <div class="input-field col s12">
+                                <select id="tipoDocumento" name="tipoDocumento">
+                                  <option value="">Seleccione tipo de documento</option>
+                                  <option value="Cedula">Cédula de ciudadanía</option>
+                                  <option value="CedulaExt">Cédula de extranjería</option>
+                                </select>
+                                <label>Tipo Documento</label>
+                                <span class="helper-text" id="valTipoDocumento"></span> 
+                              </div>
+                            
                             <div class="input-fiel col s12">
                                 <label for="documento">Documento</label>
-                                <input type="text" placeholder="Documento" id="documento" title="Ingrese su documento." class="solo_numeros">
+                                <input type="text" placeholder="Documento" id="documento" name="documento" title="Ingrese su documento." class="solo_numeros">
                                 <label for="" id="vDocumento"></label>
-
                             </div>
                             <div class="input-fiel col s12">
                                 <label for="nombre">Telefono</label>
-                                <input type="text" placeholder="Teléfono" id="telefono" title="Ingrese su número de teléfono." class="solo_numeros">
+                                <input type="text" placeholder="Teléfono" id="telefono" name="telefono" title="Ingrese su número de teléfono." class="solo_numeros">
                                 <label for="" id="vTelefono"></label>
 
                             </div>
                            
                             <div class="input-fiel col s12">
                                 <label for="nombre">Dirección</label>
-                                <input type="text" placeholder="Dirección" id="direccion" title="Ingrese su dirección.">
+                                <input type="text" placeholder="Dirección" id="direccion" name="direccion" title="Ingrese su dirección.">
                                 <label for="" id="vDireccion"></label>
 
                             </div>
                             <div class="input-fiel col s12">
                                 <label for="nombre">Correo</label>
-                                <input type="text" placeholder="Correo" id="correo" title="Ingrese su correo electrónico.">
+                                <input type="text" placeholder="Correo" name="correo" id="correo" title="Ingrese su correo electrónico.">
                                 <label for="" id="vCorreo"></label>
 
                             </div>
                             <div class="input-fiel col s12">
                                 <label for="nombre">Cargo</label>
-                                <input type="text" placeholder="Cargo" id="cargo" title="Ingrese su cargo." class="solo_mayus_letras">
+                                <input type="text" placeholder="Cargo" name="cargo" id="cargo" title="Ingrese su cargo." class="solo_mayus_letras">
                                 <label for="" id="vCargo"></label>
 
                             </div>
                             <div class="input-fiel col s12">
                                 <label for="nombre">Nombre De Obra</label>
-                                <input type="text" placeholder="Nombre De La Obra" id="nombreObra" title="Ingrese nombre de la obra." class="solo_mayus_letras">
+                                <input type="text" placeholder="Nombre De La Obra" name="nombreObra" id="nombreObra" title="Ingrese nombre de la obra." class="solo_mayus_letras">
                                 <label for="" id="vNOmbreObra"></label>
 
                             </div>
+
                             <div class="input-fiel col s12">
-                                <div class="botones">
-                                    <a class="waves-effect waves-light btn-large" id="registrar" >Registrar</a>
-                                    <a class="waves-effect waves-light btn-large" id="limpiar" onclick="limpiar()" >limpiar</a>
-                                    <a class="waves-effect waves-light btn-large" id="salir" onclick="salir()">Salir</a>
-                                </div>
+                                <label for="">Fecha Registro</label>
+                                <input type="text" class="datepicker" id="fecha" name="fecha">
+                                <label for="datepicker" id="valFecha"></label>
+                            </div>
+                         
+                            <div class="input-fiel col s12">
+                                <p>
+                                    <label>
+                                      <input type="radio" name="estado[]" value="activo" id="estadoActivo" />
+                                      <span>Activo</span>
+                                    </label>
+                                  </p>
+                            </div>
+                            <div class="input-fiel col s12">
+                                <p>
+                                    <label>
+                                      <input type="radio" name="estado[]" value="inactivo"id="estadoInactivo"/>
+                                      <span>Inactivo</span>
+                                      <label for="estadoInactivo" id="valEstado"></label>
+                                    </label>
+                                  </p>
+                                  <label for="" id="valEstado"></label>
+                            </div>
+                       
+                            <div class="input-fiel col s12">
+                                <button class="btn waves-effect waves-light" type="submit" name="action" id="registrar">
+                                    Enviar
+                                    <i class="material-icons right">send</i>
+                                  </button>
                             </div>
                            </form>
-                            
+
+                           <div class="col s12 l12">
+                                <h5 id="mensajeRegistro"></h5>
+                            </div>
+
+                           <div class="input-fiel col s12">
+                            <footer class="footer">
+                                Presentado por: Olmeiro Orozco Ortiz &copy;
+                            </footer>
+                        </div>
                         </div>
                     </div>
                 </div>
-            </main>
 
     </div>
 </body>
-<script src="js/funcionesClientes.js"></script>
+<script src="js/funcionesCliente.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 </html>
