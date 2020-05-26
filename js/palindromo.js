@@ -8,7 +8,8 @@ $(document).ready(function(){
 
         if($("#palabra").val().length == 0)
         {
-            alert("todos los campos son obligatorios.");
+            //alert("todos los campos son obligatorios.");
+            Swal.fire('Ingresa una palabra!!!')
         }
         else
         {
