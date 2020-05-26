@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="css/estilosClientes.css">
+    <link rel="stylesheet" href="css/estiloPalindromo.css">
 </head>
     
     <body>
@@ -21,16 +21,17 @@
 
                     <form class="contact-form" action="palindroma.php" id="palabraPalindroma" name="palabraPalindroma" method="POST">
                     
-                    <div class="input-fiel col s12">
+                    <div class="input-fiel col s12 m4 l12">
                         <label for="nombre">Ingrese palabra a testear:</label>
                         <input type="text" placeholder="Ingrese Palabra" id="palabra" name="palabra" title="Ingrese la palabra." class="">
                         <span class="helper-text" data-error="wrong" data-success="right" id="valPalabra"></span>
                     </div>
-                    
-                    <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-                        <i class="material-icons right">send</i>
-                    </button>
 
+                    <div class="col s12 l12">
+                        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                            <i class="material-icons right">send</i>
+                        </button>
+                    </div>
                     </form>
 
                     <div class="col s12 l12">
@@ -38,12 +39,13 @@
                     </div>
 
                     <div class="col s12 l12">
-                        <h5 id=""></h5>
+                        <h5 id="Subtitulo">Resultados del testeo:</h5>
+                        <p id="resultados" class="parrafoResultados"></p>
                     </div>
 
                     <div class="input-fiel col s12">
                     <footer class="footer">
-                        Presentado por: Olmeiro Orozco Ortiz &copy;
+                        <p>Presentado por: Olmeiro Orozco Ortiz ADSI SENA 2020 &copy;</p>
                     </footer>
                 </div>
                 </div>
@@ -51,7 +53,7 @@
         </div>
     </div>
 </body>
-<script src="js/funcionesCliente.js"></script>
+<script src="js/palindromo.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>

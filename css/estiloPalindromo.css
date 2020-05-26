@@ -1,0 +1,26 @@
+.row {
+    margin-top: 50px;
+}
+
+#subtitulo {
+    text-align: center;
+}
+
+.parrafoResultados {
+    text-align: center;
+    border: 5px solid #F27676;
+    border-radius: 5px;
+}
+
+h3 {
+    text-align: center;
+}
+
+.footer {
+    margin-top: 80px;
+    text-align: center;
+}
+
+.footer > p {
+    color: salmon;
+}

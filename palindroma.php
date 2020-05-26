@@ -4,19 +4,19 @@ date_default_timezone_set("UTC");
 // echo "<br>";
 
 $palabra = $_POST["palabra"];
-echo "palabra: " .$palabra;
-echo "<br>";
+// echo "palabra: " .$palabra;
+// echo "<br>";
 
 $cantLetras = strlen($palabra);
-echo "cantidad de letras: " . $cantLetras;
-echo "<br>";
+// echo "cantidad de letras: " . $cantLetras;
+// echo "<br>";
 
 $mayus = strtoupper($palabra);
-echo "en mayuscula: " . $mayus;
-echo "<br>";
+// echo "en mayuscula: " . $mayus;
+// echo "<br>";
 
-echo "Fecha: " . date('Y-m-d');
-echo "<br>";
+// echo "Fecha: " . date('Y-m-d');
+// echo "<br>";
 
 //reemplazar vocales por x:
 
@@ -28,8 +28,8 @@ $cadena4 = str_replace("e","x",$cadena4);
 $cadena4 = str_replace("i","x",$cadena4);
 $cadena4 = str_replace("o","x",$cadena4);
 $cadena4 = str_replace("u","x",$cadena4);
-echo "nueva palabra: " . $cadena4;
-echo "<br>";
+// echo "nueva palabra: " . $cadena4;
+// echo "<br>";
 
 function contarVocales($cadena)
 {
@@ -55,18 +55,37 @@ function contarVocales($cadena)
 }
 
 $cantVocales = contarVocales($palabra);
-echo "numero vocales es: " . $cantVocales;
-echo "<br>";
+// echo "numero vocales es: " . $cantVocales;
+// echo "<br>";
 //palindromas:
 
 $fraseInvertida = strrev($palabra);
 
-if ( $palabra == $fraseInvertida)
-{
-    echo "la palabra es palindromo.";
-}
-else{
-    echo "la palabra no es palindroma";
-}
+// if ( $palabra == $fraseInvertida)
+// {
+//     echo "la palabra es palindromo.";
+// }
+// else{
+//     echo "la palabra no es palindroma";
+// }
 
+
+if ($palabra == $fraseInvertida)
+{
+    echo "Palabra Ingresada: " . $mayus;
+    echo "<br>";
+    echo "Cantidad de Letras: " . $cantLetras;
+    echo "<br>";
+    echo "Número De Vocales: " . $cantVocales;
+    echo "<br>";
+    echo "X Por Cada vocal: " . $cadena4;
+    echo "<br>";
+    echo "La Palabra Es PALINDROMO.";
+    echo "<br>";
+    echo "Fecha: " . date('Y-m-d');
+}
+else
+{
+    echo "la palabra NO es palindromo.";
+}
 ?>
